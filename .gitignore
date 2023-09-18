@@ -1,0 +1,8 @@
+# Mac being annoying
+.DS_Store
+
+# Compiled classes
+*.class
+
+# Any log files
+*.log
