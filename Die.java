@@ -3,7 +3,7 @@ public class Die {
 
     public void roll() {
 
-        var val = java.lang.Math.random() * 6;
+        var val = (java.lang.Math.random() * 6) + 1;
         value = (int) val;
     }
 
