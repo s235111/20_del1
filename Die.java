@@ -5,6 +5,7 @@ public class Die {
 
         var val = java.lang.Math.random() * 6;
         value = (int) val;
+
     }
 
     public int getValue() {
