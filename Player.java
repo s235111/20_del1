@@ -1,12 +1,28 @@
 class Player {
-	private int point = 0;
-	private String name;
+
+
+	//Constructor
+	public Player(){
+		this.name = "";
+		this.points = 0;
+	}
+	//Constructor with name overload
+	public Player(String givenName){
+		this.name = givenName;
+		this.points = 0;
+	}
+
+	//Constructor with name and point overload
+	public Player(String givenName, int startPoint){
+		this.name = givenName;
+		this.points = startPoint;
+	}
 
 	public String getName(){
 		return name;
 	}
 	public void setName(String nameToSet){
-		name = nameToSet;
+		this.name = nameToSet;
 	}
 
 	public int getPoints(){
@@ -14,11 +30,11 @@ class Player {
 	}
 
 	public void setPoints(int Score){
-		point = Score;
+		this.point = Score;
 	}
 
 	public void addPoints(int toBeAdded){
-		point += toBeAdded;
+		this.point += toBeAdded;
 	}
 
 
