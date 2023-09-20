@@ -6,6 +6,7 @@ class Player {
 		this.name = "";
 		this.points = 0;
 	}
+
 	//Constructor with name overload
 	public Player(String givenName){
 		this.name = givenName;
@@ -19,14 +20,14 @@ class Player {
 	}
 
 	public String getName(){
-		return name;
+		return this.name;
 	}
 	public void setName(String nameToSet){
 		this.name = nameToSet;
 	}
 
 	public int getPoints(){
-		return point;
+		return this.point;
 	}
 
 	public void setPoints(int Score){
