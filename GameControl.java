@@ -22,13 +22,26 @@ class GameControl {
 
 		if (player.getPoints() >= 40){
 			System.out.println(player.getName() + " wins");
+			return true;
+		} else{
+			return false;
 		}
+
 
 	}
 
 	public static void main(String[] args) {
 
-
+		while(true){
+			playTurn(player1);
+			if(checkWin(player1)){
+				break;
+			}
+			playTurn(player2);
+			if(checkWin(player2)){
+				break;
+			}
+		}
 
 	}
 }
