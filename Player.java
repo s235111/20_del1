@@ -1,5 +1,7 @@
 class Player {
 
+	private String name;
+    private int points;
 
 	//Constructor
 	public Player(){
@@ -27,15 +29,15 @@ class Player {
 	}
 
 	public int getPoints(){
-		return this.point;
+		return this.points;
 	}
 
-	public void setPoints(int Score){
-		this.point = Score;
+	public void setPoints(int score){
+		this.points = score;
 	}
 
 	public void addPoints(int toBeAdded){
-		this.point += toBeAdded;
+		this.points += toBeAdded;
 	}
 
 
