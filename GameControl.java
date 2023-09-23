@@ -20,12 +20,7 @@ class GameControl {
 
 	public boolean checkWin(Player player) {
 
-		if (player.getPoints() >= 40) {
-			System.out.println(player.getName() + " wins");
-			return true;
-		} else {
-			return false;
-		}
+		return player.getPoints() >= 40;
 
 	}
 
