@@ -5,6 +5,22 @@ class GameControl {
 
 	DiceCup diceCup = new DiceCup();
 
+	public void playGame() {
+
+		while (true) {
+			playTurn(player1);
+			if (checkWin(player1)) {
+				System.out.println(player1.getName());
+				break;
+			}
+			playTurn(player2);
+			if (checkWin(player2)) {
+				break;
+			}
+		}
+
+	}
+
 	public void playTurn(Player player) {
 
 		diceCup.rollDice();
@@ -27,17 +43,7 @@ class GameControl {
 	public static void main(String[] args) {
 
 		var game = new GameControl();
-
-		while (true) {
-			game.playTurn(game.player1);
-			if (game.checkWin(game.player1)) {
-				break;
-			}
-			game.playTurn(game.player2);
-			if (game.checkWin(game.player2)) {
-				break;
-			}
-		}
+		game.playGame();
 
 	}
 
