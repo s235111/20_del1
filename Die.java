@@ -1,17 +1,14 @@
 public class Die {
-    public int value;
 
-    public void roll() {
+	public int value;
 
-        var val = (java.lang.Math.random() * 6) + 1;
-        value = (int) val;
+	public void roll() {
+		var val = (Math.random() * 6) + 1;
+		value = (int) val;
+	}
 
-    }
-
-    public int getValue() {
-
-        return value;
-
-    }
+	public int getValue() {
+		return value;
+	}
 
 }

@@ -5,7 +5,7 @@ class GameControl {
 
 	DiceCup diceCup = new DiceCup();
 
-	public void playTurn(Player player){
+	public void playTurn(Player player) {
 
 		diceCup.rollDice();
 		var sum = diceCup.getSum();
@@ -18,30 +18,30 @@ class GameControl {
 
 	}
 
-	public boolean checkWin(Player player){
+	public boolean checkWin(Player player) {
 
-		if (player.getPoints() >= 40){
+		if (player.getPoints() >= 40) {
 			System.out.println(player.getName() + " wins");
 			return true;
-		} else{
+		} else {
 			return false;
 		}
-
 
 	}
 
 	public static void main(String[] args) {
 
-		while(true){
+		while (true) {
 			playTurn(player1);
-			if(checkWin(player1)){
+			if (checkWin(player1)) {
 				break;
 			}
 			playTurn(player2);
-			if(checkWin(player2)){
+			if (checkWin(player2)) {
 				break;
 			}
 		}
 
 	}
+
 }
