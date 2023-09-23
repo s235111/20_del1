@@ -31,13 +31,15 @@ class GameControl {
 
 	public static void main(String[] args) {
 
+		var game = new GameControl();
+
 		while (true) {
-			playTurn(player1);
-			if (checkWin(player1)) {
+			game.playTurn(game.player1);
+			if (game.checkWin(game.player1)) {
 				break;
 			}
-			playTurn(player2);
-			if (checkWin(player2)) {
+			game.playTurn(game.player2);
+			if (game.checkWin(game.player2)) {
 				break;
 			}
 		}
