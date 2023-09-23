@@ -7,16 +7,27 @@ class GameControl {
 
 	public void playGame() {
 
-		while (true) {
-			playTurn(player1);
-			if (checkWin(player1)) {
-				System.out.println(player1.getName());
-				break;
+		boolean isPlayerTwo = false;
+		Player currentPlayer;
+		var scanner = new java.util.Scanner(System.in);
+
+		try {
+			while (true) {
+				currentPlayer = isPlayerTwo ? player2 : player1;
+				isPlayerTwo = !isPlayerTwo;
+
+				playTurn(currentPlayer);
+				System.out.println();
+				if (checkWin(currentPlayer)) {
+					System.out.println(currentPlayer.getName() + " won the game!");
+					break;
+				}
 			}
-			playTurn(player2);
-			if (checkWin(player2)) {
-				break;
-			}
+		} catch (Exception e) {
+			System.err.println("Something went wrong");
+			System.err.print(e);
+		} finally {
+			scanner.close();
 		}
 
 	}
