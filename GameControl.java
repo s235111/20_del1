@@ -15,10 +15,15 @@ class GameControl {
 
 		try {
 			// Ask the user for the player names
+			String input;
+
 			System.out.print("Player 1 name: ");
-			player1.setName(scanner.nextLine());
+			input = scanner.nextLine();
+			player1.setName(input.isBlank() ? "Player 1" : input);
+
 			System.out.print("Player 2 name: ");
-			player2.setName(scanner.nextLine());
+			input = scanner.nextLine();
+			player2.setName(input.isBlank() ? "Player 2" : input);
 
 			// Clear the previous two lines and move the cursor back up
 			System.out.print("\033[A\033[K\033[A\033[K");
@@ -73,8 +78,13 @@ class GameControl {
 					System.out.print("\033[2E\033[K");
 					break;
 				}
-
-				isPlayerTwo = !isPlayerTwo;
+				// If the die dont have the same value the turn switches
+				if (!diceCup.getEqual()) {
+					isPlayerTwo = !isPlayerTwo;
+					System.out.println("\033[A\033[K");
+				} else {
+					System.out.println("\033[A\033[32mCongratz you've gotten another turn\033[m");
+				}
 			}
 		} catch (java.util.NoSuchElementException e) {
 			// This happens when you press Ctrl+C
@@ -102,7 +112,7 @@ class GameControl {
 
 	public boolean checkWin(Player player) {
 
-		return player.getPoints() >= 40;
+		return player.getPoints() >= 40 && diceCup.getEqual();
 
 	}
 

@@ -12,4 +12,8 @@ public class DiceCup {
 		return die1.getValue() + die2.getValue();
 	}
 
+	public boolean getEqual() {
+		return die1.getValue() == die2.getValue();
+	}
+
 }
