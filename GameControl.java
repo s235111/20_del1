@@ -73,8 +73,10 @@ class GameControl {
 					System.out.print("\033[2E\033[K");
 					break;
 				}
-
-				isPlayerTwo = !isPlayerTwo;
+				// If the die dont have the same value the turn switches
+				if (diceCup.die1.getValue() != diceCup.die2.getValue()) {
+					isPlayerTwo = !isPlayerTwo;
+				}
 			}
 		} catch (java.util.NoSuchElementException e) {
 			// This happens when you press Ctrl+C
