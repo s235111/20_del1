@@ -76,6 +76,9 @@ class GameControl {
 				// If the die dont have the same value the turn switches
 				if (diceCup.die1.getValue() != diceCup.die2.getValue()) {
 					isPlayerTwo = !isPlayerTwo;
+					System.out.println("\033[A\033[K");
+				} else {
+					System.out.println("\033[A\033[32mCongratz you've gotten another turn\033[m");
 				}
 			}
 		} catch (java.util.NoSuchElementException e) {
