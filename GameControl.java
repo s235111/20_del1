@@ -74,7 +74,7 @@ class GameControl {
 					break;
 				}
 				// If the die dont have the same value the turn switches
-				if (diceCup.die1.getValue() != diceCup.die2.getValue()) {
+				if (!diceCup.getEqual()) {
 					isPlayerTwo = !isPlayerTwo;
 					System.out.println("\033[A\033[K");
 				} else {
@@ -107,7 +107,7 @@ class GameControl {
 
 	public boolean checkWin(Player player) {
 
-		return player.getPoints() >= 40;
+		return player.getPoints() >= 40 && diceCup.getEqual();
 
 	}
 
