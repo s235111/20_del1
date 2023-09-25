@@ -15,9 +15,13 @@ class GameControl {
 
 		try {
 			// Ask the user for the player names
+			String input;
 			System.out.print("Player 1 name: ");
-			player1.setName(scanner.nextLine());
+			input = scanner.nextLine();
+			player1.setName(input.isBlank() ? "Player 1" : input);
 			System.out.print("Player 2 name: ");
+			input = scanner.nextLine();
+			player1.setName(input.isBlank() ? "Player 2" : input);
 			player2.setName(scanner.nextLine());
 
 			// Clear the previous two lines and move the cursor back up
