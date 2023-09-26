@@ -1,4 +1,3 @@
-
 public class DiceCup {
 
 	Die die1 = new Die();
@@ -7,15 +6,14 @@ public class DiceCup {
 	public void rollDice() {
 		die1.roll();
 		die2.roll();
-
 	}
 
 	public int getSum() {
+		return die1.getValue() + die2.getValue();
+	}
 
-		var sum = die1.getValue() + die2.getValue();
-
-		return sum;
-
+	public boolean getEqual() {
+		return die1.getValue() == die2.getValue();
 	}
 
 }
