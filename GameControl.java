@@ -107,7 +107,7 @@ class GameControl {
 		var sum = diceCup.getSum();
 
 		System.out.format("%s\033[m rolled a %d and %d (=%d)",
-				player.getName(), diceCup.getDie1(), diceCup.getDie2, sum);
+				player.getName(), diceCup.getDie1(), diceCup.getDie2(), sum);
 
 		player.addPoints(sum);
 

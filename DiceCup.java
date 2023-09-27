@@ -16,11 +16,6 @@ public class DiceCup {
 		return die1.getValue() == die2.getValue();
 	}
 
-	public void setDice(int dieValue1, int dieValue2){
-		die1 = dieValue1;
-		die2 = dieValue2;
-	}
-
 	public int getDie1(){
 		return die1.getValue();
 	}
