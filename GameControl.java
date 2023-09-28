@@ -85,7 +85,7 @@ class GameControl {
 				} else {
 					if(diceCup.die1.getValue() == 1){
 					currentPlayer.setPoints(0);
-					System.out.println("\033[A\033[32moopsie doopsy you lost your points but you can try again\033[m")
+					System.out.println("\033[A\033[32moopsie doopsy you lost your points but you can try again\033[m");
 					} else{
 					System.out.println("\033[A\033[32mCongratz you've gotten another turn\033[m");
 					}
