@@ -78,6 +78,9 @@ class GameControl {
 					System.out.print("\033[2E\033[K");
 					break;
 				}
+				// update the players previous turn before ending
+				currentPlayer.setPreviousThrow(diceCup.getSum());
+
 				// If the die dont have the same value the turn switches
 				if (!diceCup.getEqual()) {
 					isPlayerTwo = !isPlayerTwo;
@@ -117,7 +120,7 @@ class GameControl {
 
 	public boolean checkWin(Player player) {
 
-		return player.getPoints() >= 40 && diceCup.getEqual();
+		return player.getPoints() >= 40 && diceCup.getEqual() || player.getPreviousThrow() == 12 && diceCup.getSum() == 12;
 
 	}
 
