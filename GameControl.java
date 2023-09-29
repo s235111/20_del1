@@ -78,12 +78,20 @@ class GameControl {
 					System.out.print("\033[2E\033[K");
 					break;
 				}
+				// update the players previous turn before ending
+				currentPlayer.setPreviousThrow(diceCup.getSum());
+
 				// If the die dont have the same value the turn switches
 				if (!diceCup.getEqual()) {
 					isPlayerTwo = !isPlayerTwo;
 					System.out.println("\033[A\033[K");
 				} else {
+					if(diceCup.die1.getValue() == 1){
+					currentPlayer.setPoints(0);
+					System.out.println("\033[A\033[32moopsie doopsy you lost your points but you can try again\033[m");
+					} else{
 					System.out.println("\033[A\033[32mCongratz you've gotten another turn\033[m");
+					}
 				}
 			}
 		} catch (java.util.NoSuchElementException e) {
@@ -104,7 +112,7 @@ class GameControl {
 		var sum = diceCup.getSum();
 
 		System.out.format("%s\033[m rolled a %d and %d (=%d)",
-				player.getName(), diceCup.die1.getValue(), diceCup.die2.getValue(), sum);
+				player.getName(), diceCup.getDie1(), diceCup.getDie2(), sum);
 
 		player.addPoints(sum);
 
@@ -112,7 +120,7 @@ class GameControl {
 
 	public boolean checkWin(Player player) {
 
-		return player.getPoints() >= 40 && diceCup.getEqual();
+		return player.getPoints() >= 40 && diceCup.getEqual() || player.getPreviousThrow() == 12 && diceCup.getSum() == 12;
 
 	}
 

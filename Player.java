@@ -2,6 +2,7 @@ class Player {
 
 	private String name;
 	private int points;
+	private int previousThrow;
 
 	// Constructor
 	public Player() {
@@ -39,6 +40,14 @@ class Player {
 
 	public void addPoints(int toBeAdded) {
 		this.points += toBeAdded;
+	}
+
+	public void setPreviousThrow(int value){
+		previousThrow = value;
+	}
+
+	public int getPreviousThrow(){
+		return previousThrow;
 	}
 
 }
